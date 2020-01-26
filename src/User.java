@@ -94,7 +94,7 @@ public class User {
 
 	}
 
-	public String[] getQueries(Users) {
+	public String[] getQueries() {
 		ArrayList<String> queries = new ArrayList<>();
 		queries.add(getUserQuery(id));
 
