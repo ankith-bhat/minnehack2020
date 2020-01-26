@@ -16,3 +16,8 @@ Program requirements:
 Java (JDK 10 or greater)
 MySQL database (for hosting the Users)
 JDBC Driver (MySQL varient, so the app can interact with the database)
+
+Program Instructions:
+Add JDBC Driver to CLASSPATH
+Add a 'friendr' database to the local MYSQL database
+run the GUI1 main Method in terminal
