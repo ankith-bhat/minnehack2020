@@ -30,6 +30,7 @@ public class friendr {
 		System.out.println(ankith.toStringFriend());
 
 		// DBWriter writer = new DBWriter(root, password);
+		// writer.createTables();
 
 		String[] queries = amith.getQueries();
 		for (String query: queries){
