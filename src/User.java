@@ -15,6 +15,7 @@ public class User {
 		name = userName;
 		password = pass;
 		interests = inters;
+		friendr.Users.add(this);
 	}
 	
 	
@@ -24,8 +25,15 @@ public class User {
 		int max = 0;
 		for (int i = 0 ; i < friendr.Users.size() ; i++)
 		{
+			
 			int curMax = 0;
 			User curUser = friendr.Users.get(i);
+			
+			if(curUser.equals(newfren))
+			{
+				continue;
+			}
+			
 			for(int j = 0 ; j < newfren.interests.size() ; j++ )
 			{
 				if(curUser.interests.contains (newfren.interests.get(j)))
