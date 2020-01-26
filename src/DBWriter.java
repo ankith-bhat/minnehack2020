@@ -16,15 +16,10 @@ public class DBWriter {
     		+ "Password VARCHAR(100)"
     		+ "PRIMARY KEY (ID)"
     		+ ");";
-<<<<<<< HEAD
 
-    private final String create_user_interests = "CREATE TABLE UserInterests ("
-    		+ "ID VARCHAR(10) NOT NULL,"
-=======
     
     private final String create_user_interests = "CREATE TABLE UserInterests (" 
     		+ "ID INT NOT NULL,"
->>>>>>> 21363f3a8ecf1d4e59a1fe4a6c6a449522567965
     		+ "Name VARCHAR(100),"
     		+ "Interests VARCHAR(300),"
     		+ "PRIMARY KEY (ID, Interests),"
