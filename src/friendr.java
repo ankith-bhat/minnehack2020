@@ -27,7 +27,7 @@ public class friendr {
 		karan.friendSearch(karan);
 		System.out.println(karan.toStringFriend());
 		ankith.friendSearch(ankith);
-		System.out.println(ankith.toStringFriend());0
+		System.out.println(ankith.toStringFriend());
 
 
 

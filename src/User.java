@@ -69,6 +69,10 @@ public class User {
 		StringBuilder query_command = new StringBuilder(100);
 		StringBuilder query_values = new StringBuilder(100);
 
+
+		query_command.append("INSERT INTO Users (ID, Name, Password) ");
+		query_values.append("VALUES (" + id + ", '" + name + "', '" + password + "')");
+
 		return query_command.toString() + query_values.toString();
 
 	}
@@ -81,9 +85,9 @@ public class User {
 
 	}
 
-	public String[] getQueries() {
+	public String[] getQueries(Users) {
 		ArrayList<String> queries = new ArrayList<>();
-		queries.add(getUserQuery());
+		queries.add(getUserQuery(id));
 
 
 		return queries.toArray(new String[queries.size()]);

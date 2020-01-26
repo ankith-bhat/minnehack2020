@@ -10,6 +10,21 @@ public class DBWriter {
     Statement stmt;
     ResultSet rs;
 
+    private final String create_users = "CREATE TABLE Users ("
+    		+ "ID VARCHAR(10) NOT NULL,"
+    		+ "Name VARCHAR(100),"
+    		+ "Password VARCHAR(100)"
+    		+ "PRIMARY KEY (ID)"
+    		+ ");";
+
+    private final String create_user_interests = "CREATE TABLE UserInterests ("
+    		+ "ID VARCHAR(10) NOT NULL,"
+    		+ "Name VARCHAR(100),"
+    		+ "Interests VARCHAR(300),"
+    		+ "PRIMARY KEY (ID, Interests),"
+    		+ "FOREIGN KEY (ID) REFERENCES Users(ID)"
+    		+ ");";
+    /*
     private final String create_individuals="CREATE TABLE Individuals ("
             + "ID VARCHAR(10) NOT NULL,"
             + "FirstName VARCHAR(45),"
@@ -55,7 +70,7 @@ public class DBWriter {
             + "PRIMARY KEY (FamilyID, EventTag),"
             + "FOREIGN KEY (FamilyID) REFERENCES FamilySpouse(FamilyID)"
             + ");";
-
+*/
     private final String drop_individuals = "DROP TABLE IF EXISTS Individuals";
 
     private final String drop_individuals_events = "DROP TABLE IF EXISTS IndividualEvents";
@@ -96,11 +111,11 @@ public class DBWriter {
     public void dropTables(){
         System.out.println("Dropping Tables...");
 
-        executeQuery(drop_family_event);
-        executeQuery(drop_family_child);
-        executeQuery(drop_family_spouse);
-        executeQuery(drop_individuals_events);
-        executeQuery(drop_individuals);
+        // executeQuery(drop_family_event);
+        // executeQuery(drop_family_child);
+        // executeQuery(drop_family_spouse);
+        // executeQuery(drop_individuals_events);
+        // executeQuery(drop_individuals);
 
         System.out.println("Deletion finished...");
     }
@@ -108,11 +123,8 @@ public class DBWriter {
     public void createTables(){
         System.out.println("Creating Tables...");
 
-        executeQuery(create_individuals);
-        executeQuery(create_individuals_events);
-        executeQuery(create_family_spouse);
-        executeQuery(create_family_child);
-        executeQuery(create_family_event);
+        executeQuery(create_users);
+        executeQuery(create_user_interests);
 
         System.out.println("Creation finished...");
     }
