@@ -30,6 +30,7 @@ public class friendr {
 		System.out.println(ankith.toStringFriend());
 
 		// DBWriter writer = new DBWriter(root, password);
+		// writer.createTables();
 
 	/*	String[] queries = amith.getQueries();
 		for (String query: queries){
@@ -39,4 +40,20 @@ public class friendr {
 
 
 	}
+
+	public static void writeDB() throws Exception {
+		 DBWriter writer = new DBWriter("root", "password");
+		 writer.createTables();
+
+
+		for (User user: Users){
+			String[] queries = user.getQueries();
+			for (String query: queries) {
+				//System.out.println(query);
+				writer.executeQuery(query);
+			}
+		}
+
+	}
+
 }

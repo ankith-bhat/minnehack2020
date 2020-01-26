@@ -13,7 +13,7 @@ public class DBWriter {
     private final String create_users = "CREATE TABLE Users ("
     		+ "ID INT NOT NULL,"
     		+ "Name VARCHAR(100),"
-    		+ "Password VARCHAR(100)"
+    		+ "Password VARCHAR(100),"
     		+ "PRIMARY KEY (ID)"
     		+ ");";
 
@@ -88,7 +88,7 @@ public class DBWriter {
         try {
             // get driver information
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String JdbcURL = "jdbc:mysql://localhost:3306/friender" + "?autoReconnect=true&useSSL=false";
+            String JdbcURL = "jdbc:mysql://localhost:3306/friendr" + "?autoReconnect=true&useSSL=false";
 
             conn =
                     DriverManager.getConnection(JdbcURL, user, password);
@@ -153,8 +153,8 @@ public class DBWriter {
         catch (SQLException ex){
             // error handling
             System.out.println("SQLException: " + ex.getMessage());
-            System.out.println("SQLState: " + ex.getSQLState());
-            System.out.println("VendorError: " + ex.getErrorCode());
+            // System.out.println("SQLState: " + ex.getSQLState());
+            // System.out.println("VendorError: " + ex.getErrorCode());
             result = false;
         }
         finally {
