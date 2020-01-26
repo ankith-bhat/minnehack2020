@@ -53,7 +53,10 @@ public class User {
 	}
 	
 	public String toStringFriend() {
-		String s = "Name: " + this.name + ", Shared Interests:";
+		if (curFriend == null) {
+			return "No friend found, sorry!";
+		}
+		String s = "Name: " + curFriend.name + ", Shared Interests:";
 		for (int i = 0 ; i < shared_inter.size(); i++) {
 			s = s + " " + shared_inter.get(i);
 		}
