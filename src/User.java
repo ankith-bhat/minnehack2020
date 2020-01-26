@@ -84,10 +84,13 @@ public class User {
 		ArrayList<String> queries = new ArrayList<>();
 
 		for (String interest : interests) {
-			
+			query_command.append("INSERT INTO UserInterests (ID, Name, Interests) ");
+			query_values.append("VALUES (" + id + ", '" + name + "', '" + interest + "')");
+
+			queries.add(query_command.toString() + query_values.toString());
 		}
 
-
+		return queries.toArray(new String[queries.size()]);
 
 	}
 
@@ -95,6 +98,7 @@ public class User {
 		ArrayList<String> queries = new ArrayList<>();
 		queries.add(getUserQuery(id));
 
+		queries.addAll(Arrays.asList(getInterestQueries()));
 
 		return queries.toArray(new String[queries.size()]);
 	}
