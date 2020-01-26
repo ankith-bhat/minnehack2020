@@ -6,6 +6,7 @@ public class User {
 
 	 protected String name;
 	 protected String password;
+	 protected int id;
 	 
 	 User curFriend = null;
 	 protected ArrayList <String> shared_inter = new ArrayList<String>(); 
@@ -16,6 +17,7 @@ public class User {
 		password = pass;
 		interests = inters;
 		friendr.Users.add(this);
+		id = friendr.Users.size();
 	}
 	
 	
