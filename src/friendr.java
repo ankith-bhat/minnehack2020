@@ -1,10 +1,7 @@
 import java.util.ArrayList;
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 8c91a6861975bfbe1d72d068f34178d139db56e0
 public class friendr {
 	public static ArrayList <User> Users = new ArrayList <User> ();
 
@@ -32,24 +29,15 @@ public class friendr {
 		System.out.println(karan.toStringFriend());
 		ankith.friendSearch(ankith);
 		System.out.println(ankith.toStringFriend());
-<<<<<<< HEAD
-		
-		
-		
-		
-=======
 
 		// DBWriter writer = new DBWriter(root, password);
 
 		String[] queries = amith.getQueries();
 		for (String query: queries){
-				System.out.println(query);
+			System.out.println(query);
 				 //writer.executeQuery(query);
 		}
 
 
-
->>>>>>> 8c91a6861975bfbe1d72d068f34178d139db56e0
 	}
-
 }
