@@ -41,6 +41,12 @@ public class User {
 		
 	
 	}
+	
+	public String toString() {
+		String s = "Name: " + this.name + ", Interests:";
+		
+		return s;
+	}
 
 
 	/*TODO: Get name from front end and enter in for user.
