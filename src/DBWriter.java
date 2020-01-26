@@ -17,15 +17,15 @@ public class DBWriter {
     		+ "PRIMARY KEY (ID)"
     		+ ");";
 
-    
-    private final String create_user_interests = "CREATE TABLE UserInterests (" 
+
+    private final String create_user_interests = "CREATE TABLE UserInterests ("
     		+ "ID INT NOT NULL,"
     		+ "Name VARCHAR(100),"
     		+ "Interests VARCHAR(300),"
     		+ "PRIMARY KEY (ID, Interests),"
     		+ "FOREIGN KEY (ID) REFERENCES Users(ID)"
     		+ ");";
-    
+
     private final String create_individuals="CREATE TABLE Individuals ("
             + "ID VARCHAR(10) NOT NULL,"
             + "FirstName VARCHAR(45),"
@@ -88,7 +88,7 @@ public class DBWriter {
         try {
             // get driver information
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String JdbcURL = "jdbc:mysql://localhost:3306/gedcom_test" + "?autoReconnect=true&useSSL=false";
+            String JdbcURL = "jdbc:mysql://localhost:3306/friender" + "?autoReconnect=true&useSSL=false";
 
             conn =
                     DriverManager.getConnection(JdbcURL, user, password);
