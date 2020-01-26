@@ -41,4 +41,19 @@ public class friendr {
 
 	}
 
+	public static void writeDB() throws Exception {
+		 DBWriter writer = new DBWriter("root", "password");
+		 writer.createTables();
+
+
+		for (User user: Users){
+			String[] queries = user.getQueries();
+			for (String query: queries) {
+				//System.out.println(query);
+				writer.executeQuery(query);
+			}
+		}
+
+	}
+
 }

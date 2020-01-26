@@ -1,14 +1,8 @@
 import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.util.ArrayList;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JList;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 public class GUI1 {
 
@@ -22,7 +16,7 @@ public class GUI1 {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		//String userName, String pass, ArrayList <String> inters
 		
@@ -34,9 +28,9 @@ public class GUI1 {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+
 			}
 		});
-
 
 	}
 
@@ -55,7 +49,7 @@ public class GUI1 {
 		frmNewUser = new JFrame();
 		frmNewUser.setTitle("New User");
 		frmNewUser.setBounds(100, 100, 450, 300);
-		frmNewUser.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmNewUser.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		frmNewUser.getContentPane().setLayout(null);
 		
 		txtName = new JTextField();
@@ -102,6 +96,24 @@ public class GUI1 {
 		});
 		btnNewButton.setBounds(0, 171, 171, 41);
 		frmNewUser.getContentPane().add(btnNewButton);
+
+
+
+
+
+		WindowListener exitListener = new WindowAdapter() {
+
+			@Override
+			public void windowClosing(WindowEvent e) {
+				try {
+					friendr.writeDB();
+				} catch (Exception ee) {
+					ee.printStackTrace();
+				}
+				System.exit(0);
+			}
+		};
+		frmNewUser.addWindowListener(exitListener);
 		
 		
 		
