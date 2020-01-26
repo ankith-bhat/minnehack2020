@@ -32,14 +32,14 @@ public class DBWriter {
     ResultSet rs;
 
     private final String create_users = "CREATE TABLE Users ("
-    		+ "ID VARCHAR(10) NOT NULL,"
+    		+ "ID INT NOT NULL,"
     		+ "Name VARCHAR(100),"
     		+ "Password VARCHAR(100)"
     		+ "PRIMARY KEY (ID)"
     		+ ");";
     
     private final String create_user_interests = "CREATE TABLE UserInterests (" 
-    		+ "ID VARCHAR(10) NOT NULL,"
+    		+ "ID INT NOT NULL,"
     		+ "Name VARCHAR(100),"
     		+ "Interests VARCHAR(300)," 
     		+ "PRIMARY KEY (ID, Interests),"
