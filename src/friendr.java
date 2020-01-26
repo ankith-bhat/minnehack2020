@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 
-
 public class friendr {
 	public static ArrayList <User> Users = new ArrayList <User> ();
 
@@ -23,20 +22,20 @@ public class friendr {
 		User karan = new User("Karan", "", interests2);
 		User ankith = new User("Ankith", "", interests3);
 
-		amith.friendSearch(amith);
+		amith.friendSearch();
 		System.out.println(amith.toStringFriend());
-		karan.friendSearch(karan);
+		karan.friendSearch();
 		System.out.println(karan.toStringFriend());
-		ankith.friendSearch(ankith);
+		ankith.friendSearch();
 		System.out.println(ankith.toStringFriend());
 
 		// DBWriter writer = new DBWriter(root, password);
 
-		String[] queries = amith.getQueries();
+	/*	String[] queries = amith.getQueries();
 		for (String query: queries){
 			System.out.println(query);
 				 //writer.executeQuery(query);
-		}
+		}*/
 
 
 	}
