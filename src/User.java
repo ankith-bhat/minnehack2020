@@ -6,10 +6,10 @@ public class User {
 
 	 protected String name;
 	 protected String password;
-	 
+
 	 User curFriend = null;
-	 protected ArrayList <String> shared_inter = new ArrayList<String>(); 
-	 
+	 protected ArrayList <String> shared_inter = new ArrayList<String>();
+
 	public User(String userName, String pass, ArrayList <String> inters)
 	{
 		name = userName;
@@ -17,23 +17,23 @@ public class User {
 		interests = inters;
 		friendr.Users.add(this);
 	}
-	
-	
+
+
 	public void friendSearch(User newfren)
 	{
-		
+
 		int max = 0;
 		for (int i = 0 ; i < friendr.Users.size() ; i++)
 		{
-			
+
 			int curMax = 0;
 			User curUser = friendr.Users.get(i);
-			
+
 			if(curUser.equals(newfren))
 			{
 				continue;
 			}
-			
+
 			for(int j = 0 ; j < newfren.interests.size() ; j++ )
 			{
 				if(curUser.interests.contains (newfren.interests.get(j)))
@@ -48,10 +48,10 @@ public class User {
 				newfren.curFriend = curUser;
 			}
 		}
-		
-	
+
+
 	}
-	
+
 	public String toStringFriend() {
 		if (curFriend == null) {
 			return "No friend found, sorry!";
@@ -64,20 +64,46 @@ public class User {
 	}
 
 
-		
-	
-	
+
+	private String getUserQuery() {
+		StringBuilder query_command = new StringBuilder(100);
+		StringBuilder query_values = new StringBuilder(100);
+
+		return query_command.toString() + query_values.toString();
+
+	}
+
+
+	private String[] getInterestQueries(){
+		ArrayList<String> queries = new ArrayList<>();
+
+
+
+	}
+
+	public String[] getQueries() {
+		ArrayList<String> queries = new ArrayList<>();
+		queries.add(getUserQuery());
+
+
+		return queries.toArray(new String[queries.size()]);
+	}
+
+
+
+
+
 	/*TODO: Get name from front end and enter in for user.
-	 * 
+	 *
 	 * public void setname() {
-	
+
 	System.out.println("Please enter your name friend");
-	
+
 	System.in.
-	
+
 	}*/
-	
-	
-	
+
+
+
 
 }
