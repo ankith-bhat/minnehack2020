@@ -5,13 +5,15 @@ public class User {
 	protected ArrayList <String> interests = new ArrayList <String> ();
 
 	 protected String name;
-	 
+	 protected String password;
 	 
 	 User curFriend = null;
 	 
-	public User()
+	public User(String userName, String pass, ArrayList <String> inters)
 	{
-		
+		name = userName;
+		password = pass;
+		interests = inters;
 	}
 	
 	
