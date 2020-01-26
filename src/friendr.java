@@ -29,7 +29,7 @@ public class friendr {
 		ankith.friendSearch(ankith);
 		System.out.println(ankith.toStringFriend());
 
-		// DBWriter writer = new DBWriter();
+		// DBWriter writer = new DBWriter(root, password);
 
 		String[] queries = amith.getQueries();
 		for (String query: queries){

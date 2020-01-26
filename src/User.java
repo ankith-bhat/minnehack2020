@@ -82,15 +82,13 @@ public class User {
 
 
 	private String[] getInterestQueries(){
-		StringBuilder query_command = new StringBuilder(100);
-		StringBuilder query_values = new StringBuilder(100);
 		ArrayList<String> queries = new ArrayList<>();
 
 		for (String interest : interests) {
-			query_command.append("INSERT INTO UserInterests (ID, Name, Interests) ");
-			query_values.append("VALUES (" + id + ", '" + name + "', '" + interest + "')");
+			String query_command = "INSERT INTO UserInterests (ID, Name, Interests) ";
+			String query_values = "VALUES (" + id + ", '" + name + "', '" + interest + "')";
 
-			queries.add(query_command.toString() + query_values.toString());
+			queries.add(query_command + query_values);
 		}
 
 		return queries.toArray(new String[queries.size()]);
