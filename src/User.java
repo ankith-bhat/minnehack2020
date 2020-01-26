@@ -8,6 +8,7 @@ public class User {
 	 protected String password;
 	 
 	 User curFriend = null;
+	 protected ArrayList <String> shared_inter = new ArrayList<String>(); 
 	 
 	public User(String userName, String pass, ArrayList <String> inters)
 	{
@@ -43,6 +44,9 @@ public class User {
 	}
 
 
+		
+	
+	
 	/*TODO: Get name from front end and enter in for user.
 	 * 
 	 * public void setname() {
