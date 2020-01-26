@@ -30,6 +30,7 @@ public class User {
 			{
 				if(curUser.interests.contains (newfren.interests.get(j)))
 				{
+					newfren.shared_inter.add(newfren.interests.get(j));
 					curMax++;
 				}
 			}
