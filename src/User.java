@@ -44,9 +44,11 @@ public class User {
 	
 	}
 	
-	public String toString() {
-		String s = "Name: " + this.name + ", Interests:";
-		
+	public String toStringFriend() {
+		String s = "Name: " + this.name + ", Shared Interests:";
+		for (int i = 0 ; i < shared_inter.size(); i++) {
+			s = s + " " + shared_inter.get(i);
+		}
 		return s;
 	}
 
