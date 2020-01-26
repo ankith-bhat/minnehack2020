@@ -10,7 +10,7 @@ public class User {
 	 protected int id;
 
 	 User curFriend = null;
-	 protected ArrayList <String> shared_inter = new ArrayList<String>();
+	 private ArrayList <String> shared_inter = new ArrayList<String>();
 
 	public User(String userName, String pass, ArrayList <String> inters)
 	{
@@ -22,7 +22,7 @@ public class User {
 	}
 
 
-	public void friendSearch(User newfren)
+	public void friendSearch()
 	{
 
 		int max = 0;
@@ -32,37 +32,37 @@ public class User {
 			int curMax = 0;
 			User curUser = friendr.Users.get(i);
 
-			if(curUser.equals(newfren))
+			if(curUser.equals(this))
 			{
 				continue;
 			}
 
-			for(int j = 0 ; j < newfren.interests.size() ; j++ )
+			for(int j = 0 ; j < this.interests.size() ; j++ )
 			{
-				if(curUser.interests.contains (newfren.interests.get(j)))
+				if(curUser.interests.contains(this.interests.get(j)))
 				{
-					newfren.shared_inter.add(newfren.interests.get(j));
+					this.shared_inter.add(this.interests.get(j));
 					curMax++;
 				}
 			}
 			if(curMax > max)
 			{
 				max = curMax;
-				newfren.curFriend = curUser;
+				this.curFriend = curUser;
 			}
 		}
-
-
 	}
 
 	public String toStringFriend() {
 		if (curFriend == null) {
-			return "No friend found, sorry!";
+			return "Your your only friend loser";
 		}
-		String s = "Name: " + curFriend.name + ", Shared Interests:";
-		for (int i = 0 ; i < shared_inter.size(); i++) {
-			s = s + " " + shared_inter.get(i);
+		String s = this.name +"s friend " + "Name: " + curFriend.name + ", Shared Interests:";
+		for (int i = 0 ; i < this.shared_inter.size(); i++) {
+			s = s + " " + this.shared_inter.get(i);
 		}
+		
+		System.out.println(s);
 		return s;
 	}
 
