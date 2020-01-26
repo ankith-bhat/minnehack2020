@@ -17,7 +17,7 @@ public class User {
 	}
 	
 	
-	public void FriendSearch(User newfren)
+	public void friendSearch(User newfren)
 	{
 		
 		int max = 0;
