@@ -18,7 +18,7 @@ public class User {
 	}
 	
 	
-	public void FriendSearch(User newfren)
+	public void friendSearch(User newfren)
 	{
 		
 		int max = 0;
@@ -41,6 +41,12 @@ public class User {
 		}
 		
 	
+	}
+	
+	public String toString() {
+		String s = "Name: " + this.name + ", Interests:";
+		
+		return s;
 	}
 
 
