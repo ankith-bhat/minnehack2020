@@ -36,12 +36,14 @@ public class User {
 			{
 				continue;
 			}
-
+			ArrayList <String> tmpShared = new ArrayList<String>();
 			for(int j = 0 ; j < this.interests.size() ; j++ )
 			{
 				if(curUser.interests.contains(this.interests.get(j)))
 				{
-					this.shared_inter.add(this.interests.get(j));
+					
+					
+					tmpShared.add(this.interests.get(j));
 					curMax++;
 				}
 			}
@@ -49,6 +51,7 @@ public class User {
 			{
 				max = curMax;
 				this.curFriend = curUser;
+				this.shared_inter = tmpShared;
 			}
 		}
 	}
