@@ -15,7 +15,6 @@ public class GUI1 {
 	private JFrame frmNewUser;
 	private JTextField txtName;
 	private JTextField txtPassword;
-	public ArrayList<String> interests = new ArrayList<String>();
 	private JTextField txtInterests;
 	private JTextField txtInterests_1;
 
@@ -86,10 +85,11 @@ public class GUI1 {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
+				ArrayList<String> interests = new ArrayList<String>();
 				interests.add(txtInterests.getText());
-				interests.add(txtInterests.getText());
+				interests.add(txtInterests_1.getText());
 				User newFren = new User(txtName.getText(), txtPassword.getText(),interests);
-				newFren.friendSearch(newFren);
+				newFren.friendSearch();
 				newFren.toStringFriend();
 								
 			}
