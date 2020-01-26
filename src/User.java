@@ -54,12 +54,14 @@ public class User {
 	
 	public String toStringFriend() {
 		if (curFriend == null) {
-			return "No friend found, sorry!";
+			return "Your your only friend loser";
 		}
-		String s = "Name: " + curFriend.name + ", Shared Interests:";
+		String s = this.name +"s friend " + "Name: " + curFriend.name + ", Shared Interests:";
 		for (int i = 0 ; i < shared_inter.size(); i++) {
 			s = s + " " + shared_inter.get(i);
 		}
+		
+		System.out.println(s);
 		return s;
 	}
 
