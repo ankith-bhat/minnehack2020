@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class User {
 
@@ -81,6 +82,8 @@ public class User {
 
 
 	private String[] getInterestQueries(){
+		StringBuilder query_command = new StringBuilder(100);
+		StringBuilder query_values = new StringBuilder(100);
 		ArrayList<String> queries = new ArrayList<>();
 
 		for (String interest : interests) {
@@ -94,9 +97,9 @@ public class User {
 
 	}
 
-	public String[] getQueries(Users) {
+	public String[] getQueries() {
 		ArrayList<String> queries = new ArrayList<>();
-		queries.add(getUserQuery(id));
+		queries.add(getUserQuery());
 
 		queries.addAll(Arrays.asList(getInterestQueries()));
 

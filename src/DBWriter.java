@@ -25,7 +25,7 @@ public class DBWriter {
     		+ "PRIMARY KEY (ID, Interests),"
     		+ "FOREIGN KEY (ID) REFERENCES Users(ID)"
     		+ ");";
-    /*
+    
     private final String create_individuals="CREATE TABLE Individuals ("
             + "ID VARCHAR(10) NOT NULL,"
             + "FirstName VARCHAR(45),"
@@ -71,7 +71,7 @@ public class DBWriter {
             + "PRIMARY KEY (FamilyID, EventTag),"
             + "FOREIGN KEY (FamilyID) REFERENCES FamilySpouse(FamilyID)"
             + ");";
-*/
+
     private final String drop_individuals = "DROP TABLE IF EXISTS Individuals";
 
     private final String drop_individuals_events = "DROP TABLE IF EXISTS IndividualEvents";
